@@ -2,16 +2,30 @@
 <html>
 <head>
   <title>Ruby on Rails Tutorial Sample App</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/header' %>
+	<header class="navbar navbar-fixed-up navbar-inverse">
+		<div class="container">
+			<%= link_to 'sample app', users_path , id:"logo", class: "text-white" %>
+			<nav>
+				<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to "Home", '#' %></li>
+					<li><%= link_to "Help", '#' %></li>
+					<li><%= link_to "Log in", '#' %></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 	<div class="container">
-		<%= yield %>
-		<%= render 'layouts/footer' %>
-		<%= debug(params) if Rails.env.development? %>
+		<div>
+			<%= yield %>
+		</div>
+		<div class="hidden">
+			<%= debug(params) if Rails.env.development? %>
+		</div>
 	</div>
 
 </body>

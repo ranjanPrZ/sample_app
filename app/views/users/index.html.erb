@@ -1,0 +1,11 @@
+<div>
+	<h1 class="text-center">User Index</h1>
+</div>
+
+<%= @user.each do |user| %>
+	<%= user.name %><br />
+	<%= user.email %><br />
+	<%= user.phone %><br />
+
+<% end %>
+
